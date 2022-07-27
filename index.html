@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="app/css/style.css">
+    <title>Įdomūs dalykai</title>
+<body>
+  <h1>Įdomūs dalykai</h1>
+
+  <div class="buttons">
+    <button onclick="changeHeader(event, 'kalnai')">Kalnai</button>
+    <button onclick="changeHeader(event, 'vanduo')">Vanduo</button>
+    <button onclick="changeHeader(event, 'dangus')">Dangus</button>
+  </div>
+    
+
+    <div class="imgs">
+
+      <div class="tab" id="kalnai">
+      <img
+        src="https://images.unsplash.com/photo-1507039915464-9d829b6d2d78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="kalnai"
+      />
+    </div>
+
+    <div class="tab" id="vanduo">
+      <img
+        src="https://images.unsplash.com/photo-1466094899371-97b327dff551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        alt="vanduo"
+      />
+    </div>
+
+    <div class="tab" id="dangus">
+      <img
+        src="https://images.unsplash.com/photo-1498354136128-58f790194fa7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        alt="dangus"
+      />
+    </div>
+    </div>
+
+    
+
+    <script>
+      const tabs = document.getElementsByClassName("tab")
+      const buttons = document.getElementsByTagName("button")
+
+    for(var x of tabs){
+        x.style.display = "none"
+    }
+ 
+     function changeHeader(e, name) {
+
+    for(var x of tabs){
+        x.style.display = "none"
+    }
+    document.getElementById(name).style.display = "block"
+
+    for(var x of buttons){
+        x.classList.remove("selected")
+    }
+    e.currentTarget.classList.add("selected")
+    
+  }
+    </script>
+</body>
+</html>
